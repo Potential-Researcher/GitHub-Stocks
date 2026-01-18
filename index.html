@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockPulse | Market Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+</head>
+<body>
+    <div class="noise-overlay"></div>
+    
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon">◈</span>
+            <span class="logo-text">StockPulse</span>
+        </div>
+        <div class="header-meta">
+            <span class="live-indicator">
+                <span class="pulse"></span>
+                LIVE
+            </span>
+            <span class="last-updated" id="lastUpdated">--</span>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Search Section -->
+        <section class="search-section">
+            <div class="search-container">
+                <div class="search-input-wrapper">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input 
+                        type="text" 
+                        id="stockSearch" 
+                        class="search-input" 
+                        placeholder="Search symbol (e.g., AAPL, MSFT, GOOGL)"
+                        autocomplete="off"
+                    >
+                    <button class="search-btn" id="searchBtn">
+                        <span>Search</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="quick-picks">
+                    <span class="quick-label">Popular:</span>
+                    <button class="quick-btn" data-symbol="AAPL">AAPL</button>
+                    <button class="quick-btn" data-symbol="MSFT">MSFT</button>
+                    <button class="quick-btn" data-symbol="GOOGL">GOOGL</button>
+                    <button class="quick-btn" data-symbol="AMZN">AMZN</button>
+                    <button class="quick-btn" data-symbol="TSLA">TSLA</button>
+                    <button class="quick-btn" data-symbol="NVDA">NVDA</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stock Info Card -->
+        <section class="stock-card" id="stockCard">
+            <div class="card-placeholder" id="cardPlaceholder">
+                <div class="placeholder-icon">📈</div>
+                <p>Search for a stock symbol to view details</p>
+            </div>
+            
+            <div class="card-content hidden" id="cardContent">
+                <div class="stock-header">
+                    <div class="stock-identity">
+                        <h1 class="stock-symbol" id="stockSymbol">--</h1>
+                        <p class="stock-name" id="stockName">--</p>
+                    </div>
+                    <div class="stock-price-block">
+                        <span class="current-price" id="currentPrice">--</span>
+                        <span class="price-change" id="priceChange">--</span>
+                    </div>
+                </div>
+                
+                <div class="stock-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Open</span>
+                        <span class="stat-value" id="statOpen">--</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">High</span>
+                        <span class="stat-value" id="statHigh">--</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Low</span>
+                        <span class="stat-value" id="statLow">--</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Volume</span>
+                        <span class="stat-value" id="statVolume">--</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Prev Close</span>
+                        <span class="stat-value" id="statPrevClose">--</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">52W High</span>
+                        <span class="stat-value" id="stat52High">--</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chart Section -->
+        <section class="chart-section" id="chartSection">
+            <div class="chart-header">
+                <h2 class="chart-title">Price History</h2>
+                <div class="chart-controls">
+                    <div class="time-filters">
+                        <button class="time-btn" data-range="5D">5D</button>
+                        <button class="time-btn active" data-range="1W">1W</button>
+                        <button class="time-btn" data-range="1M">1M</button>
+                        <button class="time-btn" data-range="3M">3M</button>
+                        <button class="time-btn" data-range="6M">6M</button>
+                        <button class="time-btn" data-range="1Y">1Y</button>
+                    </div>
+                    <div class="chart-type-toggle">
+                        <button class="type-btn active" data-type="line" title="Line Chart">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                            </svg>
+                        </button>
+                        <button class="type-btn" data-type="bar" title="Bar Chart">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="12" width="4" height="8"></rect>
+                                <rect x="10" y="8" width="4" height="12"></rect>
+                                <rect x="17" y="4" width="4" height="16"></rect>
+                            </svg>
+                        </button>
+                        <button class="type-btn" data-type="area" title="Area Chart">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 20h18V10l-6 4-4-8-5 6-3-2v10z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="chart-container">
+                <canvas id="priceChart"></canvas>
+                <div class="chart-loading hidden" id="chartLoading">
+                    <div class="loader"></div>
+                    <span>Loading chart data...</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Volume Chart -->
+        <section class="volume-section" id="volumeSection">
+            <h2 class="section-title">Trading Volume</h2>
+            <div class="chart-container volume-chart">
+                <canvas id="volumeChart"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Data provided by <a href="https://www.alphavantage.co/" target="_blank">Alpha Vantage</a></p>
+        <p class="footer-note">Built for GitHub Pages • Automated with GitHub Actions</p>
+    </footer>
+
+    <!-- API Key Modal -->
+    <div class="modal-overlay hidden" id="apiModal">
+        <div class="modal">
+            <h2>🔑 API Key Required</h2>
+            <p>This demo requires a free Alpha Vantage API key.</p>
+            <ol>
+                <li>Visit <a href="https://www.alphavantage.co/support/#api-key" target="_blank">Alpha Vantage</a></li>
+                <li>Get your free API key</li>
+                <li>Enter it below</li>
+            </ol>
+            <input type="text" id="apiKeyInput" placeholder="Enter your API key" class="api-input">
+            <div class="modal-actions">
+                <button class="modal-btn primary" id="saveApiKey">Save Key</button>
+                <button class="modal-btn secondary" id="useDemo">Use Demo Data</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

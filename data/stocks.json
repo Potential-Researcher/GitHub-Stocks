@@ -1,0 +1,97 @@
+{
+  "lastUpdated": "2025-01-18T12:00:00Z",
+  "symbols": ["AAPL", "MSFT", "GOOGL", "AMZN", "TSLA", "NVDA"],
+  "stocks": {
+    "AAPL": {
+      "quote": {
+        "symbol": "AAPL",
+        "price": 185.42,
+        "change": 2.34,
+        "changePercent": 1.28,
+        "open": 183.50,
+        "high": 186.20,
+        "low": 182.80,
+        "volume": 52436789,
+        "prevClose": 183.08,
+        "latestTradingDay": "2025-01-17"
+      },
+      "history": []
+    },
+    "MSFT": {
+      "quote": {
+        "symbol": "MSFT",
+        "price": 420.15,
+        "change": -1.85,
+        "changePercent": -0.44,
+        "open": 422.00,
+        "high": 423.50,
+        "low": 418.20,
+        "volume": 18234567,
+        "prevClose": 422.00,
+        "latestTradingDay": "2025-01-17"
+      },
+      "history": []
+    },
+    "GOOGL": {
+      "quote": {
+        "symbol": "GOOGL",
+        "price": 175.82,
+        "change": 3.12,
+        "changePercent": 1.81,
+        "open": 173.00,
+        "high": 176.50,
+        "low": 172.80,
+        "volume": 24567890,
+        "prevClose": 172.70,
+        "latestTradingDay": "2025-01-17"
+      },
+      "history": []
+    },
+    "AMZN": {
+      "quote": {
+        "symbol": "AMZN",
+        "price": 221.45,
+        "change": 4.55,
+        "changePercent": 2.10,
+        "open": 217.50,
+        "high": 222.30,
+        "low": 217.00,
+        "volume": 35678901,
+        "prevClose": 216.90,
+        "latestTradingDay": "2025-01-17"
+      },
+      "history": []
+    },
+    "TSLA": {
+      "quote": {
+        "symbol": "TSLA",
+        "price": 178.23,
+        "change": -5.77,
+        "changePercent": -3.14,
+        "open": 184.00,
+        "high": 185.50,
+        "low": 177.20,
+        "volume": 89012345,
+        "prevClose": 184.00,
+        "latestTradingDay": "2025-01-17"
+      },
+      "history": []
+    },
+    "NVDA": {
+      "quote": {
+        "symbol": "NVDA",
+        "price": 142.67,
+        "change": 1.23,
+        "changePercent": 0.87,
+        "open": 141.50,
+        "high": 143.80,
+        "low": 140.90,
+        "volume": 45678901,
+        "prevClose": 141.44,
+        "latestTradingDay": "2025-01-17"
+      },
+      "history": []
+    }
+  },
+  "_note": "This is sample data. Real data will be populated by GitHub Actions."
+}

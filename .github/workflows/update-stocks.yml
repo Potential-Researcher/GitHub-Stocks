@@ -1,0 +1,84 @@
+name: Update Stock Data
+
+# This workflow demonstrates GitHub Actions automation
+# It fetches stock data and commits it to the repository
+
+on:
+  # Run on a schedule (cron syntax)
+  # This runs every hour during US market hours (Mon-Fri, 9am-5pm ET)
+  schedule:
+    - cron: '0 14-21 * * 1-5'  # 9am-4pm ET (UTC-5)
+  
+  # Allow manual triggering from the Actions tab
+  workflow_dispatch:
+    inputs:
+      symbols:
+        description: 'Comma-separated stock symbols to fetch'
+        required: false
+        default: 'AAPL,MSFT,GOOGL,AMZN,TSLA,NVDA'
+
+# Set permissions for the workflow
+permissions:
+  contents: write  # Required to push commits
+
+jobs:
+  update-stocks:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # 1. Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      # 2. Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      # 3. Install dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+      
+      # 4. Fetch stock data
+      - name: Fetch stock data
+        env:
+          ALPHA_VANTAGE_API_KEY: ${{ secrets.ALPHA_VANTAGE_API_KEY }}
+          SYMBOLS: ${{ github.event.inputs.symbols || 'AAPL,MSFT,GOOGL,AMZN,TSLA,NVDA' }}
+        run: python scripts/fetch_stocks.py
+      
+      # 5. Commit and push changes
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          # Check if there are changes to commit
+          if git diff --quiet data/; then
+            echo "No changes to commit"
+          else
+            git add data/
+            git commit -m "📈 Auto-update stock data [$(date -u '+%Y-%m-%d %H:%M UTC')]"
+            git push
+            echo "Changes committed and pushed!"
+          fi
+      
+      # 6. Create a summary
+      - name: Job Summary
+        run: |
+          echo "## 📊 Stock Data Update Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Time:** $(date -u '+%Y-%m-%d %H:%M UTC')" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Symbols Updated:**" >> $GITHUB_STEP_SUMMARY
+          echo "\`${{ github.event.inputs.symbols || 'AAPL,MSFT,GOOGL,AMZN,TSLA,NVDA' }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ -f data/stocks.json ]; then
+            echo "**Data File:** Updated ✅" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "**Data File:** Not found ⚠️" >> $GITHUB_STEP_SUMMARY
+          fi
