@@ -206,7 +206,7 @@ async function fetchStockHistory(symbol) {
     const cached = getFromCache(cacheKey);
     if (cached) return cached;
     
-    const url = `${CONFIG.API_BASE}?function=TIME_SERIES_DAILY&symbol=${symbol}&outputsize=full&apikey=${state.apiKey}`;
+    const url = `${CONFIG.API_BASE}?function=TIME_SERIES_DAILY&symbol=${symbol}&outputsize=compact&apikey=${state.apiKey}`;
     
     try {
         const response = await fetch(url);
