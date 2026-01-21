@@ -1,21 +1,37 @@
 {
-  "lastUpdated": "2026-01-20T21:14:29.696542Z",
+  "lastUpdated": "2026-01-21T14:22:28.450877Z",
   "symbols": [
-    "AAPL"
+    "AAPL",
+    "TSLA"
   ],
   "stocks": {
     "AAPL": {
       "quote": {
         "symbol": "AAPL",
-        "price": 255.53,
-        "change": -2.68,
-        "changePercent": -1.0379,
-        "open": 257.9,
-        "high": 258.9,
-        "low": 254.93,
-        "volume": 72142773,
-        "prevClose": 258.21,
-        "latestTradingDay": "2026-01-16"
+        "price": 246.7,
+        "change": -8.83,
+        "changePercent": -3.4556,
+        "open": 252.73,
+        "high": 254.79,
+        "low": 243.42,
+        "volume": 77280987,
+        "prevClose": 255.53,
+        "latestTradingDay": "2026-01-20"
+      },
+      "history": []
+    },
+    "TSLA": {
+      "quote": {
+        "symbol": "TSLA",
+        "price": 419.25,
+        "change": -18.25,
+        "changePercent": -4.1714,
+        "open": 429.36,
+        "high": 430.725,
+        "low": 417.44,
+        "volume": 62208186,
+        "prevClose": 437.5,
+        "latestTradingDay": "2026-01-20"
       },
       "history": []
     }
