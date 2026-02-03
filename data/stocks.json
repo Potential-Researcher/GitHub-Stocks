@@ -1,7 +1,8 @@
 {
-  "lastUpdated": "2026-02-03T18:44:29.430488Z",
+  "lastUpdated": "2026-02-03T19:39:56.029766Z",
   "symbols": [
-    "AAPL"
+    "AAPL",
+    "GOOGL"
   ],
   "stocks": {
     "AAPL": {
@@ -15,6 +16,21 @@
         "low": 259.205,
         "volume": 73913425,
         "prevClose": 259.48,
+        "latestTradingDay": "2026-02-02"
+      },
+      "history": []
+    },
+    "GOOGL": {
+      "quote": {
+        "symbol": "GOOGL",
+        "price": 343.69,
+        "change": 5.69,
+        "changePercent": 1.6834,
+        "open": 336.22,
+        "high": 344.83,
+        "low": 335.63,
+        "volume": 32006052,
+        "prevClose": 338.0,
         "latestTradingDay": "2026-02-02"
       },
       "history": []
