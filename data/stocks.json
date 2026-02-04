@@ -1,8 +1,7 @@
 {
-  "lastUpdated": "2026-02-04T15:34:46.298764Z",
+  "lastUpdated": "2026-02-04T16:37:01.045923Z",
   "symbols": [
-    "AAPL",
-    "MSFT"
+    "AAPL"
   ],
   "stocks": {
     "AAPL": {
@@ -16,21 +15,6 @@
         "low": 267.61,
         "volume": 63799388,
         "prevClose": 270.01,
-        "latestTradingDay": "2026-02-03"
-      },
-      "history": []
-    },
-    "MSFT": {
-      "quote": {
-        "symbol": "MSFT",
-        "price": 411.21,
-        "change": -12.16,
-        "changePercent": -2.8722,
-        "open": 422.01,
-        "high": 422.05,
-        "low": 408.56,
-        "volume": 60076532,
-        "prevClose": 423.37,
         "latestTradingDay": "2026-02-03"
       },
       "history": []
