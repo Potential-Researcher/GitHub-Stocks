@@ -1,7 +1,8 @@
 {
-  "lastUpdated": "2026-05-18T16:42:50.551164Z",
+  "lastUpdated": "2026-05-18T18:26:33.906250Z",
   "symbols": [
-    "AAPL"
+    "AAPL",
+    "NVDA"
   ],
   "stocks": {
     "AAPL": {
@@ -15,6 +16,21 @@
         "low": 296.52,
         "volume": 54862836,
         "prevClose": 298.21,
+        "latestTradingDay": "2026-05-15"
+      },
+      "history": []
+    },
+    "NVDA": {
+      "quote": {
+        "symbol": "NVDA",
+        "price": 225.32,
+        "change": -10.42,
+        "changePercent": -4.4201,
+        "open": 229.76,
+        "high": 231.5,
+        "low": 224.24,
+        "volume": 180977639,
+        "prevClose": 235.74,
         "latestTradingDay": "2026-05-15"
       },
       "history": []
