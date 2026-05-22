@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-21T22:12:55.654205Z",
+  "lastUpdated": "2026-05-22T16:16:17.252875Z",
   "symbols": [
     "AAPL"
   ],
@@ -10,10 +10,10 @@
         "price": 304.99,
         "change": 2.74,
         "changePercent": 0.9065,
-        "open": 301.02,
-        "high": 305.539,
+        "open": 301.055,
+        "high": 305.54,
         "low": 300.4,
-        "volume": 42899699,
+        "volume": 42965126,
         "prevClose": 302.25,
         "latestTradingDay": "2026-05-21"
       },
