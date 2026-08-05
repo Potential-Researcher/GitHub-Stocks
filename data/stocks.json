@@ -1,7 +1,9 @@
 {
-  "lastUpdated": "2026-08-04T22:04:12.051765Z",
+  "lastUpdated": "2026-08-05T15:54:48.034332Z",
   "symbols": [
-    "AAPL"
+    "AAPL",
+    "MSFT",
+    "NVDA"
   ],
   "stocks": {
     "AAPL": {
@@ -10,11 +12,41 @@
         "price": 309.38,
         "change": 5.96,
         "changePercent": 1.9643,
-        "open": 302.5,
+        "open": 302.725,
         "high": 310.42,
         "low": 301.32,
-        "volume": 67871593,
+        "volume": 68000969,
         "prevClose": 303.42,
+        "latestTradingDay": "2026-08-04"
+      },
+      "history": []
+    },
+    "MSFT": {
+      "quote": {
+        "symbol": "MSFT",
+        "price": 492.81,
+        "change": 5.16,
+        "changePercent": 1.0581,
+        "open": 480.9,
+        "high": 499.4399,
+        "low": 479.17,
+        "volume": 50455454,
+        "prevClose": 487.65,
+        "latestTradingDay": "2026-08-04"
+      },
+      "history": []
+    },
+    "NVDA": {
+      "quote": {
+        "symbol": "NVDA",
+        "price": 211.94,
+        "change": 5.3,
+        "changePercent": 2.5648,
+        "open": 211.3,
+        "high": 213.06,
+        "low": 209.05,
+        "volume": 134921997,
+        "prevClose": 206.64,
         "latestTradingDay": "2026-08-04"
       },
       "history": []
