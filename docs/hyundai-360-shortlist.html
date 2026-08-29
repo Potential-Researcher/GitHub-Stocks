@@ -1,0 +1,874 @@
+<title>Hyundai 360 Shortlist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap">
+
+<style>
+  :root {
+    --paper:      #F5F7F9;
+    --surface:    #FFFFFF;
+    --surface-2:  #EDF0F4;
+    --ink:        #151A21;
+    --ink-2:      #4C5665;
+    --ink-3:      #78828F;
+    --rule:       #DCE1E8;
+    --rule-firm:  #C2CAD4;
+    --accent:     #0B7573;
+    --accent-ink: #075B59;
+    --accent-bg:  #DFEEED;
+    --amber:      #8F5E10;
+    --amber-bg:   #F4EAD6;
+    --rose:       #9C3A4E;
+    --rose-bg:    #F4E3E6;
+    --shadow:     0 1px 2px rgba(21,26,33,.05), 0 8px 24px -16px rgba(21,26,33,.22);
+
+    --f-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    --f-body:    "Newsreader", Georgia, "Times New Roman", serif;
+    --f-data:    "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+    color-scheme: light;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:      #0E1218;
+      --surface:    #161B23;
+      --surface-2:  #1D242E;
+      --ink:        #E7EBF1;
+      --ink-2:      #9FAAB9;
+      --ink-3:      #7B8695;
+      --rule:       #29313C;
+      --rule-firm:  #3A4552;
+      --accent:     #4FD3C8;
+      --accent-ink: #7BE3DA;
+      --accent-bg:  #0F302E;
+      --amber:      #E2AC55;
+      --amber-bg:   #32270F;
+      --rose:       #EC8397;
+      --rose-bg:    #351B21;
+      --shadow:     0 1px 2px rgba(0,0,0,.4), 0 10px 30px -18px rgba(0,0,0,.8);
+      color-scheme: dark;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper:      #0E1218;
+    --surface:    #161B23;
+    --surface-2:  #1D242E;
+    --ink:        #E7EBF1;
+    --ink-2:      #9FAAB9;
+    --ink-3:      #7B8695;
+    --rule:       #29313C;
+    --rule-firm:  #3A4552;
+    --accent:     #4FD3C8;
+    --accent-ink: #7BE3DA;
+    --accent-bg:  #0F302E;
+    --amber:      #E2AC55;
+    --amber-bg:   #32270F;
+    --rose:       #EC8397;
+    --rose-bg:    #351B21;
+    --shadow:     0 1px 2px rgba(0,0,0,.4), 0 10px 30px -18px rgba(0,0,0,.8);
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--f-body);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 62rem;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.25rem;
+  }
+
+  .prose { max-width: 63ch; }
+
+  h1, h2, h3, h4 {
+    font-family: var(--f-display);
+    font-weight: 600;
+    letter-spacing: -.015em;
+    text-wrap: balance;
+    margin: 0;
+    line-height: 1.15;
+  }
+
+  p { margin: 0 0 .9rem; }
+  p:last-child { margin-bottom: 0; }
+
+  .eyebrow {
+    font-family: var(--f-display);
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+
+  /* ---------- masthead ---------- */
+
+  header.masthead {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 1.75rem;
+  }
+
+  header.masthead h1 {
+    font-size: clamp(2.1rem, 5.4vw, 3.4rem);
+    font-weight: 700;
+    letter-spacing: -.03em;
+  }
+
+  .standfirst {
+    font-size: 1.12rem;
+    color: var(--ink-2);
+    max-width: 58ch;
+  }
+
+  .constraints {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+  }
+
+  .chip {
+    font-family: var(--f-display);
+    font-size: .78rem;
+    font-weight: 500;
+    letter-spacing: .01em;
+    padding: .3rem .7rem;
+    border: 1px solid var(--rule-firm);
+    border-radius: 2px;
+    color: var(--ink-2);
+    background: var(--surface);
+  }
+
+  /* ---------- verdict ---------- */
+
+  .verdict {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--accent);
+    padding: 1.5rem 1.6rem;
+  }
+  .verdict h2 {
+    font-size: 1.35rem;
+    margin-bottom: .6rem;
+    color: var(--accent-ink);
+  }
+  .verdict p { color: var(--ink); max-width: 60ch; }
+
+  /* ---------- section scaffolding ---------- */
+
+  section { display: flex; flex-direction: column; gap: 1.4rem; }
+
+  .sec-head { display: flex; flex-direction: column; gap: .45rem; }
+  .sec-head h2 {
+    font-size: clamp(1.4rem, 3vw, 1.85rem);
+    font-weight: 700;
+    letter-spacing: -.02em;
+  }
+  .sec-head p { color: var(--ink-2); max-width: 63ch; }
+
+  /* ---------- candidate cards ---------- */
+
+  .cards { display: flex; flex-direction: column; gap: 1.1rem; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem 1.6rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    gap: 1.5rem 2.25rem;
+  }
+
+  @media (max-width: 720px) {
+    .card { grid-template-columns: 1fr; }
+  }
+
+  .card-id { display: flex; flex-direction: column; gap: .55rem; grid-column: 1 / -1; }
+
+  .card-title-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .card h3 { font-size: 1.5rem; font-weight: 700; }
+  .card h3 span { color: var(--ink-3); font-weight: 500; }
+
+  .status {
+    font-family: var(--f-display);
+    font-size: .7rem;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: .25rem .55rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .status.clear  { background: var(--accent-bg); color: var(--accent-ink); }
+  .status.tight  { background: var(--amber-bg);  color: var(--amber); }
+
+  .card-sub { font-family: var(--f-display); font-size: .9rem; color: var(--ink-2); }
+
+  /* budget meter */
+
+  .meter { display: flex; flex-direction: column; gap: .5rem; }
+
+  .meter-track {
+    position: relative;
+    height: 34px;
+    background: var(--surface-2);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .meter-fill {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: var(--w);
+    background: var(--accent);
+    opacity: .85;
+  }
+  .meter-fill.range {
+    left: var(--from);
+    width: calc(var(--w) - var(--from));
+    background: repeating-linear-gradient(
+      -45deg, var(--amber), var(--amber) 5px, transparent 5px, transparent 10px
+    );
+    opacity: .55;
+  }
+  .meter-fill.range-base {
+    background: var(--amber);
+    opacity: .8;
+    width: var(--from);
+  }
+
+  .meter-ceiling {
+    position: absolute;
+    top: -4px; bottom: -4px;
+    left: 87.5%;
+    width: 2px;
+    background: var(--ink);
+  }
+  .meter-ceiling::after {
+    content: "$35K";
+    position: absolute;
+    left: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--f-data);
+    font-size: .66rem;
+    font-weight: 600;
+    letter-spacing: .04em;
+    color: var(--ink);
+    background: var(--paper);
+    padding: 0 3px;
+  }
+
+  .meter-legend {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-family: var(--f-data);
+    font-size: .74rem;
+    color: var(--ink-3);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* price ledger */
+
+  .ledger { display: flex; flex-direction: column; gap: 0; }
+
+  .ledger-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: .5rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .ledger-row:last-child { border-bottom: none; }
+  .ledger-row.total { border-top: 1px solid var(--rule-firm); border-bottom: none; padding-top: .65rem; }
+
+  .ledger-label {
+    font-family: var(--f-display);
+    font-size: .84rem;
+    color: var(--ink-2);
+  }
+  .ledger-row.total .ledger-label { color: var(--ink); font-weight: 600; }
+
+  .ledger-value {
+    font-family: var(--f-data);
+    font-size: .92rem;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .ledger-row.total .ledger-value { font-size: 1.12rem; font-weight: 600; }
+
+  .card-notes { display: flex; flex-direction: column; gap: .8rem; }
+  .card-notes h4 {
+    font-family: var(--f-display);
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .card-notes ul { margin: 0; padding-left: 1.1rem; display: flex; flex-direction: column; gap: .35rem; }
+  .card-notes li { font-size: .97rem; color: var(--ink-2); }
+  .card-notes li strong { color: var(--ink); font-weight: 500; }
+
+  .catch {
+    font-size: .95rem;
+    color: var(--ink-2);
+    border-left: 2px solid var(--amber);
+    padding-left: .8rem;
+  }
+  .catch strong { color: var(--amber); font-family: var(--f-display); font-size: .82rem; letter-spacing: .04em; text-transform: uppercase; display: block; margin-bottom: .15rem; }
+
+  /* ---------- table ---------- */
+
+  .table-scroll { overflow-x: auto; border: 1px solid var(--rule); border-radius: 3px; background: var(--surface); }
+
+  table { border-collapse: collapse; width: 100%; min-width: 640px; }
+
+  th, td { text-align: left; padding: .7rem .9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+
+  th {
+    font-family: var(--f-display);
+    font-size: .7rem;
+    font-weight: 600;
+    letter-spacing: .11em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    background: var(--surface-2);
+    white-space: nowrap;
+  }
+
+  td { font-size: .95rem; color: var(--ink-2); }
+  td.model { font-family: var(--f-display); font-weight: 500; color: var(--ink); white-space: nowrap; }
+  td.num { font-family: var(--f-data); font-variant-numeric: tabular-nums; white-space: nowrap; color: var(--ink); }
+  td.num.none { color: var(--ink-3); }
+
+  .tag {
+    font-family: var(--f-display);
+    font-size: .68rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: .18rem .45rem;
+    border-radius: 2px;
+    background: var(--rose-bg);
+    color: var(--rose);
+    white-space: nowrap;
+  }
+  .tag.never { background: var(--surface-2); color: var(--ink-3); }
+
+  /* ---------- steps ---------- */
+
+  .steps { display: flex; flex-direction: column; gap: 0; counter-reset: step; }
+
+  .step {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: 1.25rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .step:last-child { border-bottom: none; }
+
+  .step::before {
+    counter-increment: step;
+    content: counter(step, decimal-leading-zero);
+    font-family: var(--f-data);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--accent);
+    padding-top: .1rem;
+  }
+
+  .step-body { display: flex; flex-direction: column; gap: .4rem; }
+  .step-body h3 { font-size: 1.08rem; font-weight: 600; }
+  .step-body p { font-size: .97rem; color: var(--ink-2); max-width: 60ch; }
+
+  /* ---------- checklist ---------- */
+
+  .checklist {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 1.4rem 1.6rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1rem 2rem;
+  }
+
+  .check { display: grid; grid-template-columns: 1.1rem 1fr; gap: .65rem; align-items: start; }
+
+  .check .box {
+    width: 1.05rem; height: 1.05rem;
+    border: 1.5px solid var(--rule-firm);
+    border-radius: 2px;
+    margin-top: .28rem;
+  }
+  .check span { font-size: .95rem; color: var(--ink-2); }
+  .check span strong { color: var(--ink); font-weight: 500; font-family: var(--f-display); font-size: .93rem; }
+
+  /* ---------- footer ---------- */
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+  }
+  footer p { font-size: .88rem; color: var(--ink-3); max-width: 68ch; }
+  footer a { color: var(--accent-ink); text-decoration-color: var(--rule-firm); text-underline-offset: 2px; }
+  footer a:hover { text-decoration-color: currentColor; }
+  footer a:focus-visible, .wrap a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .source-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem 1rem;
+    font-family: var(--f-display);
+    font-size: .82rem;
+  }
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="eyebrow">Car shortlist &middot; New driver &middot; August 2026</div>
+    <h1>Three Hyundais have a 360 camera under $35K</h1>
+    <p class="standfirst">
+      Hyundai calls it the Surround View Monitor, and it is a top-trim-only feature &mdash; there is
+      no package that adds it to a cheaper car. That single fact decides the whole search.
+    </p>
+    <div class="constraints">
+      <span class="chip">2026 model year, new</span>
+      <span class="chip">360&deg; Surround View Monitor required</span>
+      <span class="chip">Under $35,000</span>
+      <span class="chip">First car / new driver</span>
+    </div>
+  </header>
+
+  <div class="verdict prose">
+    <h2>The short answer</h2>
+    <p>
+      Only the <strong>Elantra Limited</strong>, <strong>Elantra Hybrid Limited</strong>, and
+      <strong>Kona Limited</strong> pair a factory 360-degree camera with a sticker under $35K.
+      The Elantra Limited is the clear value pick at <strong>$27,175</strong> &mdash; it leaves
+      roughly $6,500 of room under the ceiling for tax, insurance, and winter tires. The Kona Limited
+      only clears $35K on a front-wheel-drive car, and only if the ceiling means MSRP rather than
+      what you actually hand the dealer.
+    </p>
+  </div>
+
+  <section>
+    <div class="sec-head">
+      <h2>The qualifying three</h2>
+      <p>
+        Prices are 2026 MSRP as advertised by Hyundai, before tax, title, and dealer fees.
+        The bar shows MSRP plus destination against the $35,000 line.
+      </p>
+    </div>
+
+    <div class="cards">
+
+      <!-- 1. Elantra Limited -->
+      <article class="card">
+        <div class="card-id">
+          <div class="card-title-row">
+            <h3>Elantra Limited <span>&middot; compact sedan</span></h3>
+            <span class="status clear">Clears with room</span>
+          </div>
+          <div class="card-sub">2.0L four-cylinder &middot; 147 hp &middot; CVT &middot; front-wheel drive</div>
+          <div class="meter">
+            <div class="meter-track">
+              <div class="meter-fill" style="--w: 71.1%"></div>
+              <div class="meter-ceiling"></div>
+            </div>
+            <div class="meter-legend"><span>$0</span><span>$28,420 delivered</span><span>$40K</span></div>
+          </div>
+        </div>
+
+        <div class="ledger">
+          <div class="ledger-row">
+            <span class="ledger-label">MSRP</span>
+            <span class="ledger-value">$27,175</span>
+          </div>
+          <div class="ledger-row">
+            <span class="ledger-label">Destination</span>
+            <span class="ledger-value">$1,245</span>
+          </div>
+          <div class="ledger-row total">
+            <span class="ledger-label">Before tax &amp; fees</span>
+            <span class="ledger-value">$28,420</span>
+          </div>
+          <div class="ledger-row">
+            <span class="ledger-label">Headroom under $35K</span>
+            <span class="ledger-value">$6,580</span>
+          </div>
+        </div>
+
+        <div class="card-notes">
+          <h4>What the Limited adds</h4>
+          <ul>
+            <li><strong>Surround View Monitor</strong> &mdash; the 360&deg; bird's-eye view</li>
+            <li><strong>Blind-Spot View Monitor</strong> &mdash; live camera feed in the gauge cluster when signalling</li>
+            <li>Dual 10.25-inch screens, synthetic leather, Bose audio</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 2. Elantra Hybrid Limited -->
+      <article class="card">
+        <div class="card-id">
+          <div class="card-title-row">
+            <h3>Elantra Hybrid Limited <span>&middot; compact sedan</span></h3>
+            <span class="status clear">Clears with room</span>
+          </div>
+          <div class="card-sub">Hybrid four-cylinder &middot; six-speed dual-clutch &middot; front-wheel drive</div>
+          <div class="meter">
+            <div class="meter-track">
+              <div class="meter-fill" style="--w: 77.6%"></div>
+              <div class="meter-ceiling"></div>
+            </div>
+            <div class="meter-legend"><span>$0</span><span>$31,045 delivered</span><span>$40K</span></div>
+          </div>
+        </div>
+
+        <div class="ledger">
+          <div class="ledger-row">
+            <span class="ledger-label">MSRP</span>
+            <span class="ledger-value">$29,800</span>
+          </div>
+          <div class="ledger-row">
+            <span class="ledger-label">Destination</span>
+            <span class="ledger-value">$1,245</span>
+          </div>
+          <div class="ledger-row total">
+            <span class="ledger-label">Before tax &amp; fees</span>
+            <span class="ledger-value">$31,045</span>
+          </div>
+          <div class="ledger-row">
+            <span class="ledger-label">Premium over gas Limited</span>
+            <span class="ledger-value">+$2,625</span>
+          </div>
+        </div>
+
+        <div class="card-notes">
+          <h4>Why pay the premium</h4>
+          <ul>
+            <li>Same <strong>Surround View Monitor</strong> and blind-spot camera as the gas Limited</li>
+            <li>Roughly <strong>50 mpg</strong> combined &mdash; the premium pays back over a few years of commuting</li>
+            <li>Adds a sunroof and an eight-speaker Bose stereo</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 3. Kona Limited -->
+      <article class="card">
+        <div class="card-id">
+          <div class="card-title-row">
+            <h3>Kona Limited <span>&middot; small SUV</span></h3>
+            <span class="status tight">Borderline</span>
+          </div>
+          <div class="card-sub">1.6L turbo &middot; 190 hp &middot; eight-speed automatic &middot; front-wheel drive</div>
+          <div class="meter">
+            <div class="meter-track">
+              <div class="meter-fill range-base" style="--from: 84.7%"></div>
+              <div class="meter-fill range" style="--from: 84.7%; --w: 88.9%"></div>
+              <div class="meter-ceiling"></div>
+            </div>
+            <div class="meter-legend"><span>$0</span><span>$33,900&ndash;$35,500 delivered</span><span>$40K</span></div>
+          </div>
+        </div>
+
+        <div class="ledger">
+          <div class="ledger-row">
+            <span class="ledger-label">MSRP (sources differ)</span>
+            <span class="ledger-value">$32,535&ndash;$34,145</span>
+          </div>
+          <div class="ledger-row">
+            <span class="ledger-label">Destination (est.)</span>
+            <span class="ledger-value">~$1,400</span>
+          </div>
+          <div class="ledger-row total">
+            <span class="ledger-label">Before tax &amp; fees</span>
+            <span class="ledger-value">$33,900&ndash;$35,500</span>
+          </div>
+          <div class="ledger-row">
+            <span class="ledger-label">All-wheel drive</span>
+            <span class="ledger-value">+$1,800 &rarr; over</span>
+          </div>
+        </div>
+
+        <div class="card-notes">
+          <h4>What the Limited adds</h4>
+          <ul>
+            <li><strong>Surround View Monitor</strong> plus Blind-Spot View Monitor</li>
+            <li><strong>Remote Smart Parking Assist</strong> &mdash; the car parks itself while you stand outside</li>
+            <li>Hands-free tailgate, ventilated seats, Bose audio</li>
+          </ul>
+          <div class="catch">
+            <strong>Verify before you fall in love</strong>
+            Quoted MSRP varies by source between $32,535 and $34,145. Add destination and AWD and this
+            car walks past $35,000. Confirm the number on the actual window sticker.
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>Everything else, and why it's out</h2>
+      <p>
+        Every other 2026 Hyundai either puts the Surround View Monitor on a trim that starts above
+        $35K, or never offers it at all. The middle column is the cheapest way into a 360 camera on
+        that model.
+      </p>
+    </div>
+
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Cheapest trim with 360</th>
+            <th>Starting MSRP</th>
+            <th>Why it's out</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="model">Sonata</td>
+            <td>Limited</td>
+            <td class="num">$37,145</td>
+            <td>Midsize sedan; the 360 camera sits on the top trim, $2K past the ceiling</td>
+          </tr>
+          <tr>
+            <td class="model">Tucson</td>
+            <td>Limited</td>
+            <td class="num">$39,175</td>
+            <td>SEL Premium at $33,550 fits the budget but has no Surround View Monitor</td>
+          </tr>
+          <tr>
+            <td class="model">Santa&nbsp;Cruz</td>
+            <td>XRT</td>
+            <td class="num">$42,950</td>
+            <td>The $31,350 SE and $33,000 SEL are in budget; neither offers 360</td>
+          </tr>
+          <tr>
+            <td class="model">Santa&nbsp;Fe</td>
+            <td>Upper trims</td>
+            <td class="num">$40,000+</td>
+            <td>Whole model line starts near the ceiling</td>
+          </tr>
+          <tr>
+            <td class="model">Palisade</td>
+            <td>Upper trims</td>
+            <td class="num">$40,000+</td>
+            <td>Three-row SUV, well past budget</td>
+          </tr>
+          <tr>
+            <td class="model">Ioniq&nbsp;5</td>
+            <td>Upper trims</td>
+            <td class="num">$35,000 base</td>
+            <td>The price-cut base SE Standard Range fits; the 360 camera does not come with it</td>
+          </tr>
+          <tr>
+            <td class="model">Kona&nbsp;Electric</td>
+            <td><span class="tag never">Not offered</span></td>
+            <td class="num none">&mdash;</td>
+            <td>For 2026 the EV is SE-only; the SEL, N Line and Limited trims were dropped</td>
+          </tr>
+          <tr>
+            <td class="model">Venue</td>
+            <td><span class="tag never">Not offered</span></td>
+            <td class="num none">&mdash;</td>
+            <td>$20,550&ndash;$22,600, but no surround-view camera at any price</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>The trim trap</h2>
+    </div>
+    <div class="prose">
+      <p>
+        Several 2026 Hyundais land comfortably under $35K and still have no 360 camera &mdash; the
+        Elantra N Line at $29,400, the Elantra SEL Sport Premium at $25,075, the Tucson SEL Premium
+        at $33,550, the Santa Cruz SEL at $33,000. Spending more money on the wrong model gets you
+        nothing here. Hyundai does not sell the Surround View Monitor as a standalone option or a
+        package, so the rule is simply: <strong>buy the cheapest Hyundai whose Limited trim fits the
+        budget</strong>. Today that is the Elantra.
+      </p>
+      <p>
+        Watch the language at the dealership too. A "multi-view rear camera" or a wide-angle backup
+        camera is not the same system. The window sticker will spell out
+        <strong>Surround View Monitor</strong> by name if the car has it.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>The plan</h2>
+      <p>In order &mdash; each step narrows the search before the next one costs anyone a Saturday.</p>
+    </div>
+
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-body">
+          <h3>Decide whether $35K means sticker or out-the-door</h3>
+          <p>
+            Tax, title, and registration typically add 8&ndash;10%. If $35K is the amount actually
+            leaving her bank account, the working MSRP target is closer to $31K &mdash; which keeps
+            both Elantra Limiteds in and pushes the Kona Limited out. Settle this first; it decides
+            the shortlist.
+          </p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-body">
+          <h3>Search inventory by trim, not by model</h3>
+          <p>
+            On the Hyundai site or any dealer's inventory page, filter to <em>Limited</em> and nothing
+            else. Most listings in the price range will be SEL trims that look nearly identical in
+            photos and lack the camera entirely.
+          </p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-body">
+          <h3>Confirm the camera on the window sticker</h3>
+          <p>
+            Before any test drive, ask the dealer to send a photo of the Monroney sticker for that
+            specific VIN. Look for the "Surround View Monitor" line. This takes two minutes and
+            removes the single most likely way to buy the wrong car.
+          </p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-body">
+          <h3>Get her an insurance quote before signing anything</h3>
+          <p>
+            A new driver's premium can vary by a thousand dollars a year between these cars &mdash;
+            the Kona Limited's 190-hp turbo rates differently from the Elantra's 147-hp four. Run
+            quotes on the exact trims while she is still deciding, not after.
+          </p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-body">
+          <h3>Ask three dealers for an itemized out-the-door quote</h3>
+          <p>
+            Same trim, same options, in writing. Compare the bottom lines, not the monthly payments.
+            Dealer add-ons &mdash; paint protection, nitrogen-filled tires, VIN etching, fabric
+            sealant &mdash; are negotiable and usually removable; ask for them to come off.
+          </p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-body">
+          <h3>Check what Hyundai is offering that month</h3>
+          <p>
+            Hyundai routinely runs a recent-graduate rebate, first-responder and military programs,
+            and subsidized financing. These stack with the negotiated price. Also worth knowing: every
+            new Hyundai carries a 10-year/100,000-mile powertrain warranty, which matters more than
+            usual on a first car.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>What to actually test on the drive</h2>
+      <p>Written for a new driver &mdash; these are the things that are hard to judge from a spec sheet.</p>
+    </div>
+
+    <div class="checklist">
+      <div class="check">
+        <div class="box"></div>
+        <span><strong>Park it using only the 360 view.</strong> Find the tightest spot in the lot and pull in without turning around.</span>
+      </div>
+      <div class="check">
+        <div class="box"></div>
+        <span><strong>Check the screen at dusk or in rain.</strong> Camera quality varies; a grainy night image undoes the whole point.</span>
+      </div>
+      <div class="check">
+        <div class="box"></div>
+        <span><strong>Signal on the highway.</strong> Confirm the blind-spot camera feed appears in the gauge cluster and that she finds it useful, not distracting.</span>
+      </div>
+      <div class="check">
+        <div class="box"></div>
+        <span><strong>Listen to the parking sensors.</strong> Make sure the beeping is legible rather than panic-inducing.</span>
+      </div>
+      <div class="check">
+        <div class="box"></div>
+        <span><strong>Sit in the driver's seat and look out.</strong> Sedan vs. small SUV changes the seating height and over-the-shoulder view more than the camera does.</span>
+      </div>
+      <div class="check">
+        <div class="box"></div>
+        <span><strong>On the Kona, try Remote Smart Parking Assist.</strong> If it clicks for her, it may justify the extra money on its own.</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>
+      Prices are 2026 model-year MSRP compiled from published reviews and dealer listings in August
+      2026, before tax, title, registration, and dealer fees. Manufacturer pricing and trim content
+      change during the model year and vary by region &mdash; treat every figure here as the number
+      to verify on the window sticker, not as a quote.
+    </p>
+    <div class="source-list">
+      <a href="https://www.edmunds.com/hyundai/elantra/">Edmunds &mdash; Elantra</a>
+      <a href="https://www.kbb.com/hyundai/elantra-hybrid/2026/limited-hev/">KBB &mdash; Elantra Hybrid Limited</a>
+      <a href="https://www.edmunds.com/hyundai/kona/2026/trims/">Edmunds &mdash; Kona trims</a>
+      <a href="https://www.cars.com/research/hyundai-sonata-2026/">Cars.com &mdash; Sonata</a>
+      <a href="https://www.edmunds.com/hyundai/tucson/2026/trims/">Edmunds &mdash; Tucson trims</a>
+      <a href="https://www.edmunds.com/hyundai/santa-cruz/">Edmunds &mdash; Santa Cruz</a>
+      <a href="https://www.cargurus.com/research/articles/2026-hyundai-venue-pricing-specs-release-date">CarGurus &mdash; Venue</a>
+      <a href="https://www.hyundainews.com/releases/4568">Hyundai Newsroom &mdash; Ioniq 5 pricing</a>
+    </div>
+  </footer>
+
+</div>
