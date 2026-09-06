@@ -77,18 +77,12 @@ stock-dashboard/
 │   └── workflows/
 │       └── update-stocks.yml    # 🤖 GitHub Actions automation
 ├── data/
-│   ├── stocks.json              # 📊 Auto-updated stock data
-│   └── shows.json               # 📺 The shared TV watchlist
+│   └── stocks.json              # 📊 Auto-updated stock data
 ├── scripts/
-│   ├── fetch_stocks.py          # 🐍 Python script for fetching data
-│   └── watchlist.py             # 📺 Watchlist CLI (add / rate / stats)
+│   └── fetch_stocks.py          # 🐍 Python script for fetching data
 ├── index.html                   # 🌐 Main dashboard page
-├── watchlist.html               # 📺 Watchlist page
 ├── style.css                    # 🎨 Dark theme styling
-├── watchlist.css                # 📺 Watchlist styling
 ├── script.js                    # ⚡ Interactive functionality
-├── watchlist.js                 # 📺 Watchlist rendering
-├── our_shows.example.txt        # 📝 Bulk-import template
 └── README.md                    # 📚 This file!
 ```
 
@@ -244,81 +238,6 @@ The architecture supports multiple APIs. Consider adding:
 ### Learning Paths
 - [GitHub Skills](https://skills.github.com/) - Interactive courses
 - [GitHub Learning Lab](https://lab.github.com/) - Hands-on tutorials
-
----
-
-## 📺 The Shared Watchlist
-
-A second, unrelated thing living in this repo: a record of every TV show two
-people have watched **together**, what each of them thought of it, and what
-that says about what to watch next. It's at `watchlist.html`.
-
-The list lives in `data/shows.json`. Nothing edits it by hand — everything
-goes through the CLI.
-
-### First run
-
-```bash
-# Use your actual names (a and b are the two slots)
-python scripts/watchlist.py viewers a=Sam b=Riley
-
-# Add shows one at a time...
-python scripts/watchlist.py add "Severance" --ratings a=10 b=9 \
-    --note "the one we both couldn't shut up about"
-
-# ...or dump the whole backlog in at once
-cp our_shows.example.txt our_shows.txt   # then edit it
-python scripts/watchlist.py import our_shows.txt
-```
-
-The import format is one show per line, and only the title is required:
-
-```
-Title | your score | her score | status | note
-```
-
-### Filling in the details
-
-Set a [free TMDB key](https://www.themoviedb.org/settings/api) and the tool
-fetches year, genres, network, episode counts and poster art:
-
-```bash
-export TMDB_API_KEY=your_key
-python scripts/watchlist.py enrich
-```
-
-### Getting something out of it
-
-```bash
-python scripts/watchlist.py stats        # taste profile, genre ranking, biggest splits
-python scripts/watchlist.py recommend    # what to watch next, from TMDB
-python scripts/watchlist.py list --sort spread   # where you two disagree most
-python scripts/watchlist.py export -o watchlist.csv
-```
-
-`stats` is the point of the whole thing. It reports how each of you rates on
-average, which genres actually earn their runtime, which shows you both loved,
-and which ones split you — then `recommend` builds suggestions from the shows
-you *both* rated highly, so it isn't just chasing one person's taste.
-
-### Commands
-
-| Command | What it does |
-|---------|--------------|
-| `add` | Add one show, with ratings, status, tags and a note |
-| `import` | Bulk add from a text file (or stdin) |
-| `rate` | Score a show already on the list |
-| `set` | Change status, note, tags or dates |
-| `rm` | Remove a show |
-| `list` | Print the list, sorted by title, rating, spread or year |
-| `enrich` | Fill in metadata from TMDB |
-| `stats` | Taste profile and genre ranking |
-| `recommend` | Suggestions built from what you both liked |
-| `export` | Write CSV |
-| `viewers` | Set your display names |
-
-> The watchlist page reads `data/shows.json` over `fetch`, so open it through a
-> local server (`python -m http.server`) rather than as a `file://` path.
 
 ---
 
