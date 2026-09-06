@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Watchlist | Every show we've watched together</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="watchlist.css">
+</head>
+<body>
+    <div class="noise-overlay"></div>
+
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon">◈</span>
+            <span class="logo-text">Our Watchlist</span>
+        </div>
+        <nav class="nav-links">
+            <a class="nav-link" href="index.html">Stocks</a>
+            <a class="nav-link active" href="watchlist.html">Watchlist</a>
+            <span class="last-updated" id="lastUpdated">--</span>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <!-- Headline numbers -->
+        <section class="tile-row" id="tileRow" hidden></section>
+
+        <!-- What the ratings say about your taste -->
+        <section class="genre-section" id="genreSection" hidden>
+            <h2 class="section-title">Genres, best to worst</h2>
+            <p class="tile-sub" style="margin-bottom:1rem">
+                Average of both your scores, for genres you've seen more than once.
+            </p>
+            <div id="genreChart"></div>
+            <p class="genre-note" id="genreNote"></p>
+        </section>
+
+        <!-- Filters -->
+        <section class="controls" id="controls" hidden>
+            <div class="search-input-wrapper">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+                <input type="text" id="showSearch" class="search-input"
+                       placeholder="Search a title, genre or note" autocomplete="off">
+            </div>
+            <select class="control-select" id="statusFilter" aria-label="Filter by status">
+                <option value="all">All shows</option>
+                <option value="finished">Finished</option>
+                <option value="watching">Currently watching</option>
+                <option value="paused">Paused</option>
+                <option value="abandoned">Bailed on</option>
+            </select>
+            <select class="control-select" id="sortBy" aria-label="Sort by">
+                <option value="rating">Highest rated</option>
+                <option value="spread">Biggest disagreement</option>
+                <option value="title">Title A-Z</option>
+                <option value="year">Year</option>
+            </select>
+        </section>
+
+        <section class="show-grid" id="showGrid"></section>
+
+        <!-- Shown until the list has something in it -->
+        <section class="empty-state" id="emptyState" hidden>
+            <h2>📺 Nothing on the list yet</h2>
+            <p>
+                Add the shows you've watched together with the Python CLI, then
+                pull in artwork and genres from TMDB.
+            </p>
+<pre>python scripts/watchlist.py add "Severance" --ratings a=10 b=9
+python scripts/watchlist.py import our_shows.txt
+python scripts/watchlist.py enrich
+python scripts/watchlist.py stats</pre>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Show data from <a href="https://www.themoviedb.org/" target="_blank" rel="noopener">TMDB</a></p>
+        <p class="footer-note">Kept in <code>data/shows.json</code> • Edited with <code>scripts/watchlist.py</code></p>
+    </footer>
+
+    <script src="watchlist.js"></script>
+</body>
+</html>
