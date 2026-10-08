@@ -1,7 +1,8 @@
 {
-  "lastUpdated": "2026-10-07T23:56:35.697608Z",
+  "lastUpdated": "2026-10-08T19:34:32.128834Z",
   "symbols": [
-    "AAPL"
+    "AAPL",
+    "AMZN"
   ],
   "stocks": {
     "AAPL": {
@@ -13,8 +14,23 @@
         "open": 336.96,
         "high": 338.67,
         "low": 332.78,
-        "volume": 33356498,
+        "volume": 34147860,
         "prevClose": 333.63,
+        "latestTradingDay": "2026-10-07"
+      },
+      "history": []
+    },
+    "AMZN": {
+      "quote": {
+        "symbol": "AMZN",
+        "price": 259.92,
+        "change": 3.63,
+        "changePercent": 1.4164,
+        "open": 254.23,
+        "high": 260.14,
+        "low": 253.17,
+        "volume": 36225813,
+        "prevClose": 256.29,
         "latestTradingDay": "2026-10-07"
       },
       "history": []
