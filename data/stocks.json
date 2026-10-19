@@ -1,7 +1,9 @@
 {
-  "lastUpdated": "2026-10-16T23:09:25.551275Z",
+  "lastUpdated": "2026-10-19T19:34:03.959914Z",
   "symbols": [
-    "AAPL"
+    "AAPL",
+    "MSFT",
+    "AMZN"
   ],
   "stocks": {
     "AAPL": {
@@ -13,8 +15,38 @@
         "open": 346.085,
         "high": 347.82,
         "low": 340.46,
-        "volume": 59734587,
+        "volume": 59946368,
         "prevClose": 342.0,
+        "latestTradingDay": "2026-10-16"
+      },
+      "history": []
+    },
+    "MSFT": {
+      "quote": {
+        "symbol": "MSFT",
+        "price": 529.05,
+        "change": -10.39,
+        "changePercent": -1.9261,
+        "open": 541.31,
+        "high": 543.82,
+        "low": 524.43,
+        "volume": 24845667,
+        "prevClose": 539.44,
+        "latestTradingDay": "2026-10-16"
+      },
+      "history": []
+    },
+    "AMZN": {
+      "quote": {
+        "symbol": "AMZN",
+        "price": 250.0,
+        "change": -4.76,
+        "changePercent": -1.8684,
+        "open": 255.095,
+        "high": 255.54,
+        "low": 248.6,
+        "volume": 40427342,
+        "prevClose": 254.76,
         "latestTradingDay": "2026-10-16"
       },
       "history": []
