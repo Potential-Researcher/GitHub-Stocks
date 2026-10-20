@@ -1,9 +1,8 @@
 {
-  "lastUpdated": "2026-10-19T23:13:17.581163Z",
+  "lastUpdated": "2026-10-20T18:11:51.212927Z",
   "symbols": [
     "AAPL",
-    "MSFT",
-    "GOOGL"
+    "TSLA"
   ],
   "stocks": {
     "AAPL": {
@@ -15,38 +14,23 @@
         "open": 340.775,
         "high": 346.0,
         "low": 340.115,
-        "volume": 34511192,
+        "volume": 34573181,
         "prevClose": 343.46,
         "latestTradingDay": "2026-10-19"
       },
       "history": []
     },
-    "MSFT": {
+    "TSLA": {
       "quote": {
-        "symbol": "MSFT",
-        "price": 533.52,
-        "change": 4.47,
-        "changePercent": 0.8449,
-        "open": 528.7,
-        "high": 535.5684,
-        "low": 528.06,
-        "volume": 17443793,
-        "prevClose": 529.05,
-        "latestTradingDay": "2026-10-19"
-      },
-      "history": []
-    },
-    "GOOGL": {
-      "quote": {
-        "symbol": "GOOGL",
-        "price": 344.18,
-        "change": 3.59,
-        "changePercent": 1.0541,
-        "open": 343.665,
-        "high": 346.58,
-        "low": 341.85,
-        "volume": 18604574,
-        "prevClose": 340.59,
+        "symbol": "TSLA",
+        "price": 368.06,
+        "change": 13.34,
+        "changePercent": 3.7607,
+        "open": 357.5,
+        "high": 369.5808,
+        "low": 354.47,
+        "volume": 38817910,
+        "prevClose": 354.72,
         "latestTradingDay": "2026-10-19"
       },
       "history": []
