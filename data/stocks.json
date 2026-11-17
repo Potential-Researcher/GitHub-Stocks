@@ -1,37 +1,37 @@
 {
-  "lastUpdated": "2026-11-16T23:07:19.170412Z",
+  "lastUpdated": "2026-11-17T21:57:33.087613Z",
   "symbols": [
     "AAPL",
-    "TSLA"
+    "NVDA"
   ],
   "stocks": {
     "AAPL": {
       "quote": {
         "symbol": "AAPL",
-        "price": 352.78,
-        "change": -3.49,
-        "changePercent": -0.9796,
-        "open": 356.73,
-        "high": 357.1,
-        "low": 351.31,
-        "volume": 45942872,
-        "prevClose": 356.27,
-        "latestTradingDay": "2026-11-16"
+        "price": 351.91,
+        "change": -0.87,
+        "changePercent": -0.2466,
+        "open": 352.77,
+        "high": 355.36,
+        "low": 349.67,
+        "volume": 36245882,
+        "prevClose": 352.78,
+        "latestTradingDay": "2026-11-17"
       },
       "history": []
     },
-    "TSLA": {
+    "NVDA": {
       "quote": {
-        "symbol": "TSLA",
-        "price": 379.74,
-        "change": -10.48,
-        "changePercent": -2.6857,
-        "open": 386.7,
-        "high": 389.7983,
-        "low": 375.63,
-        "volume": 30150409,
-        "prevClose": 390.22,
-        "latestTradingDay": "2026-11-16"
+        "symbol": "NVDA",
+        "price": 155.46,
+        "change": -0.68,
+        "changePercent": -0.4355,
+        "open": 157.07,
+        "high": 158.19,
+        "low": 150.3301,
+        "volume": 369622480,
+        "prevClose": 156.14,
+        "latestTradingDay": "2026-11-17"
       },
       "history": []
     }
