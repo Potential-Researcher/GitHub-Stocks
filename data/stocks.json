@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-18T21:39:42.953749Z",
+  "lastUpdated": "2026-11-19T21:55:38.574617Z",
   "symbols": [
     "AAPL"
   ],
@@ -7,15 +7,15 @@
     "AAPL": {
       "quote": {
         "symbol": "AAPL",
-        "price": 352.45,
-        "change": 0.54,
-        "changePercent": 0.1534,
-        "open": 352.05,
-        "high": 356.42,
-        "low": 351.4706,
-        "volume": 33369911,
-        "prevClose": 351.91,
-        "latestTradingDay": "2026-11-18"
+        "price": 349.21,
+        "change": -3.24,
+        "changePercent": -0.9193,
+        "open": 353.16,
+        "high": 355.28,
+        "low": 346.47,
+        "volume": 40448103,
+        "prevClose": 352.45,
+        "latestTradingDay": "2026-11-19"
       },
       "history": []
     }
